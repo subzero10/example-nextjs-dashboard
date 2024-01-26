@@ -10,7 +10,7 @@ const honeybadgerNextJsConfig = {
     disableSourceMapUpload: false,
 
     // Hide debug messages (optional)
-    silent: true,
+    silent: false,
 
     // More information available at @honeybadger-io/webpack: https://github.com/honeybadger-io/honeybadger-js/tree/master/packages/webpack
     webpackPluginOptions: {
