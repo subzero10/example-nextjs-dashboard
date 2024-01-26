@@ -7,7 +7,7 @@ const moduleExports = {
 // Showing default values
 const honeybadgerNextJsConfig = {
     // Disable source map upload (optional)
-    disableSourceMapUpload: true,
+    disableSourceMapUpload: false,
 
     // Hide debug messages (optional)
     silent: true,
@@ -20,7 +20,7 @@ const honeybadgerNextJsConfig = {
         // Required if you want to upload source maps to Honeybadger
         assetsUrl: process.env.NEXT_PUBLIC_HONEYBADGER_ASSETS_URL,
 
-        revision: process.env.NEXT_PUBLIC_HONEYBADGER_REVISION,
+        revision: process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA || process.env.NEXT_PUBLIC_HONEYBADGER_REVISION,
         endpoint: 'https://api.honeybadger.io/v1/source_maps',
         ignoreErrors: false,
         retries: 3,
