@@ -2,6 +2,8 @@ const { setupHoneybadger } = require('@honeybadger-io/nextjs')
 
 /** @type {import('next').NextConfig} */
 const moduleExports = {
+    productionBrowserSourceMaps: true,
+
     // ... Your existing module.exports object goes here
     webpack: (config, { isServer }) => {
         if (isServer) {
