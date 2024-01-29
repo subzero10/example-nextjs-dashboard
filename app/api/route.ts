@@ -10,14 +10,14 @@ Honeybadger
         debug: true,
         reportData: true,
     })
-// .beforeNotify((notice) => {
-//     notice!.backtrace.forEach((line) => {
-//         if (line.file) {
-//             line.file = line.file.replace(`${projectRoot}/.next/server`, `${process.env.NEXT_PUBLIC_HONEYBADGER_ASSETS_URL}/..`)
-//         }
-//         return line
-//     })
-// })
+    .beforeNotify((notice) => {
+        notice!.backtrace.forEach((line) => {
+            if (line.file) {
+                line.file = line.file.replace(`${projectRoot}/.next/server`, `${process.env.NEXT_PUBLIC_HONEYBADGER_ASSETS_URL}/..`)
+            }
+            return line
+        })
+    })
 
 export async function GET(request: Request) {
     const { searchParams } = new URL(request.url)
